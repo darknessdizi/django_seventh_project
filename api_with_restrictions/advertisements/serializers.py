@@ -41,5 +41,7 @@ class AdvertisementSerializer(serializers.ModelSerializer):
         """Метод для валидации. Вызывается при создании и обновлении."""
 
         # TODO: добавьте требуемую валидацию
-
+        # print(data, self.request.method)
+        # if self.request.method == 'PATCH':
+        #     if self.request.user == self.object.user:
         return data
