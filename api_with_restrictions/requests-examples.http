@@ -24,7 +24,7 @@ Authorization: Token {{token_3_vik}}
 ###
 
 # попытка поменять объявление
-PATCH {{baseUrl}}/advertisements/25/
+PATCH {{baseUrl}}/advertisements/41/
 Content-Type: application/json
 Authorization: Token {{token_3_vik}}
 
