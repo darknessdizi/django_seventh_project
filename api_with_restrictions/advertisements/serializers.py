@@ -44,8 +44,6 @@ class AdvertisementSerializer(serializers.ModelSerializer):
         if self.context["request"].method == 'POST':
             if Advertisement.objects.filter(creator=self.context["request"].user, status='OPEN').count() < 10:
                 return data
-            else:
-                raise serializers.ValidationError("Нарушено требование не больше 10 объявлений со статусом OPEN")
         if self.context["request"].method == 'PATCH':
             if 'status' in data:
                 if data['status'] == 'CLOSED':
@@ -53,7 +51,6 @@ class AdvertisementSerializer(serializers.ModelSerializer):
                 else:
                     if Advertisement.objects.filter(creator=self.context["request"].user, status='OPEN').count() < 10:
                         return data
-                    else:
-                        raise serializers.ValidationError("Нарушено требование не больше 10 объявлений со статусом OPEN")
             else:
                 return data
+        raise serializers.ValidationError("Нарушено требование не больше 10 объявлений со статусом OPEN")

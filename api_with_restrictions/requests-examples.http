@@ -24,7 +24,7 @@ Authorization: Token {{token_3_vik}}
 ###
 
 # попытка поменять объявление
-PATCH {{baseUrl}}/advertisements/41/
+PATCH {{baseUrl}}/advertisements/43/
 Content-Type: application/json
 Authorization: Token {{token_3_vik}}
 
@@ -36,18 +36,19 @@ Authorization: Token {{token_3_vik}}
 ###
 
 # попытка удалить объявление
-DELETE {{baseUrl}}/advertisements/24/
+DELETE {{baseUrl}}/advertisements/44/
 Content-Type: application/json
-Authorization: Token {{token_2_dim}}
+Authorization: Token {{token_3_vik}}
 
 ###
 
 # фильтрация по создателю
-GET {{baseUrl}}/advertisements/?creator=3
+GET {{baseUrl}}/advertisements/?creator=2
 Content-Type: application/json
 
 ###
 
 # фильтрация по дате
-GET {{baseUrl}}/advertisements/?created_at_before=2020-10-01
+GET {{baseUrl}}/advertisements/?created_at_before=2023-03-04
 Content-Type: application/json
+
