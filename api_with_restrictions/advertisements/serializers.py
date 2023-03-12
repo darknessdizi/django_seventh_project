@@ -46,7 +46,7 @@ class AdvertisementSerializer(serializers.ModelSerializer):
                 return data
         if self.context["request"].method == 'PATCH':
             if 'status' in data:
-                if data['status'] == 'CLOSED':
+                if data['status'] in ('CLOSED', 'DRAFT'):
                     return data
                 else:
                     if Advertisement.objects.filter(creator=self.context["request"].user, status='OPEN').count() < 10:

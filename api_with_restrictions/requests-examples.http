@@ -6,49 +6,63 @@
 @token_3_vik = 34aeda74e7f8c43d22e222c8da5da9f01ba26e9a
 
 # получение объявлений
-GET {{baseUrl}}/advertisements/40
+GET {{baseUrl}}/advertisements/
 Content-Type: application/json
+
+###
+
+# добавление объявление в избранное для текущего пользователя
+POST {{baseUrl}}/advertisements/66/add/
+Content-Type: application/json
+Authorization: Token {{token_2_dim}}
+
+###
+
+# просмотреть избранные объявления пользователя
+GET {{baseUrl}}/advertisements/favorites/
+Content-Type: application/json
+Authorization: Token {{token_2_dim}}
 
 ###
 
 # создание объявления
 POST {{baseUrl}}/advertisements/
 Content-Type: application/json
-Authorization: Token {{token_1_admin}}
+Authorization: Token {{token_3_vik}}
 
 {
-  "title": "животные",
-  "description": "умные"
+  "title": "Окно",
+  "description": "Тонированное"
 }
 
 ###
 
 # попытка поменять объявление
-PATCH {{baseUrl}}/advertisements/40/
+PATCH {{baseUrl}}/advertisements/65/
 Content-Type: application/json
-Authorization: Token {{token_1_admin}}
+Authorization: Token {{token_2_dim}}
 
 {
-  "status": "CLOSED",
-  "title": "Окно IKEA"
+  "status": "DRAFT",
+  "title": "Окно YUFA"
 }
 
 ###
 
 # попытка удалить объявление
-DELETE {{baseUrl}}/advertisements/31/
+DELETE {{baseUrl}}/advertisements/65/
 Content-Type: application/json
 Authorization: Token {{token_2_dim}}
 
 ###
 
 # фильтрация по создателю
-GET {{baseUrl}}/advertisements/?creator=1
+GET {{baseUrl}}/advertisements/?creator=2
 Content-Type: application/json
+Authorization: Token {{token_1_admin}}
 
 ###
 
 # фильтрация по дате
-GET {{baseUrl}}/advertisements/?created_at_before=2023-03-04
+GET {{baseUrl}}/advertisements/?created_at_before=2023-03-13
 Content-Type: application/json
-
