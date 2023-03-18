@@ -12,7 +12,7 @@ Content-Type: application/json
 ###
 
 # добавление объявление в избранное для текущего пользователя
-POST {{baseUrl}}/advertisements/66/add/
+POST {{baseUrl}}/advertisements/72/add/
 Content-Type: application/json
 Authorization: Token {{token_2_dim}}
 
@@ -31,8 +31,8 @@ Content-Type: application/json
 Authorization: Token {{token_3_vik}}
 
 {
-  "title": "Окно",
-  "description": "Тонированное"
+  "title": "Диван",
+  "description": "Черный"
 }
 
 ###

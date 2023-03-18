@@ -26,8 +26,11 @@ class AdvertisementViewSet(ModelViewSet):
     def get_permissions(self):
         """Получение прав для действий."""
 
+        print('*****1', self.action)
         if self.action in ["create", "update", "partial_update", "destroy"]:
             return [IsAuthenticated(), IsOwnerOrReadOnly()]
+        elif self.action in ["favorites"]:
+            return [IsAuthenticated()]
         return []
 
     @action(methods=['get'], detail=False)
