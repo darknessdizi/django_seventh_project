@@ -29,7 +29,7 @@ class AdvertisementViewSet(ModelViewSet):
         print('*****1', self.action)
         if self.action in ["create", "update", "partial_update", "destroy"]:
             return [IsAuthenticated(), IsOwnerOrReadOnly()]
-        elif self.action in ["favorites"]:
+        elif self.action in ["favorites", "add"]:
             return [IsAuthenticated()]
         return []
 

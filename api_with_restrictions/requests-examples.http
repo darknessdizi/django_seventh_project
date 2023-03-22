@@ -50,9 +50,9 @@ Authorization: Token {{token_2_dim}}
 ###
 
 # попытка удалить объявление
-DELETE {{baseUrl}}/advertisements/65/
+DELETE {{baseUrl}}/advertisements/74/
 Content-Type: application/json
-Authorization: Token {{token_2_dim}}
+Authorization: Token {{token_3_vik}}
 
 ###
 
